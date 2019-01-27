@@ -1,0 +1,59 @@
+<templateSet group="My Django">
+  <template name="mchar" value="$field_name$ = models.CharField(max_length=$max_length$, $END$)" description="model char field with max_length" toReformat="false" toShortenFQNames="true">
+    <variable name="field_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="max_length" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="mint" value="$field_name$ = models.IntegerField($END$)" description="model int field" toReformat="false" toShortenFQNames="true">
+    <variable name="field_name" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mchoice" value="$field_name$ = models.IntegerField(choices=$choices_name$, default=$choices_default$, )&#10;$END$" description="model int field with choices" toReformat="false" toShortenFQNames="true">
+    <variable name="field_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="choices_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="choices_default" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="model" value="@python_2_unicode_compatible&#10;class $model_name$(models.Model):&#10;    $END$" description="model class" toReformat="false" toShortenFQNames="true">
+    <variable name="model_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="str" value="def __str__(self):&#10;    return &quot;$FORMAT$$END$&quot;.format($VARIALBES$)" description="string method" toReformat="false" toShortenFQNames="true">
+    <variable name="FORMAT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARIALBES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="mmeta" value="class Meta:&#10;    $END$" description="meta class for model" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="sermodel" value="class $serializer_name$(serializers.ModelSerializer):&#10;    $END$&#10;&#10;    class Meta:&#10;        model = $model_name$&#10;        fields = []&#10;" description="model serializer" toReformat="false" toShortenFQNames="true">
+    <variable name="serializer_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="mforeign" value="$field_name$ = models.ForeignKey($model_class$, on_delete=models.CASCADE)" description="foreign key model" toReformat="false" toShortenFQNames="true">
+    <variable name="field_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model_class" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="mmany" value="$field_name$ = models.ManyToManyField($model_class$)&#10;$END$" description="many to many" toReformat="false" toShortenFQNames="true">
+    <variable name="field_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model_class" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+</templateSet>
